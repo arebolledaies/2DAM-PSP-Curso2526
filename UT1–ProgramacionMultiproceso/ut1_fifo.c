@@ -11,7 +11,7 @@ int main(void)
   int  p,  bytesleidos;
   char buffer[10];
 
-   p=mkfifo("FIFO2",  S_IFIFO|0666);//permiso  de  lecture y escritura
+   p=mkfifo("FIFO2", 0666);//permiso  de  lecture y escritura
 	
   while (1)
   {
