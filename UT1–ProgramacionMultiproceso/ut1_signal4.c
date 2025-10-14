@@ -36,19 +36,19 @@ int main()
 
       while(1) { //bucle infinito             
        sleep(1);
-	   kill(pid_padre, SIGUSR1);//ENVIA SEÑAL AL PADRE
-	   //pause();//hijo espera hasta que llegue una señal de respuesta
+	     kill(pid_padre, SIGUSR1);//ENVIA SEÑAL AL PADRE
+	     pause();//hijo espera hasta que llegue una señal de respuesta
 	  }
         break;    
     default: //PADRE 
 	  //tratamiento de la señal en proceso padre
-      //signal(SIGUSR1, gestion_padre );
-      //while(1)  {
-        //pause();//padre espera hasta recibir una señal del hijo
-	    //sleep(1);
-	    kill(pid_hijo, SIGUSR1);// Padre envía señal al hijo
-        wait(NULL);
-      //}       
+      signal(SIGUSR1, gestion_padre );
+      while(1)  {
+              pause();//padre espera hasta recibir una señal del hijo
+	      sleep(1);
+	      kill(pid_hijo, SIGUSR1);// Padre envía señal al hijo
+        
+      }       
         break;
   } 
   return 0;
