@@ -1,6 +1,6 @@
 class Ejemplo implements Runnable {
     public void run() {
-        int contador = 0; // variable local, exclusiva de este hilo
+        int contador = 0; //  variable local, exclusiva de este hilo
         if (Thread.currentThread().getName()=="Hilo 1") contador++;
         if (Thread.currentThread().getName()=="Hilo 2") contador--;
         System.out.println(Thread.currentThread().getName() + ": " + contador);
