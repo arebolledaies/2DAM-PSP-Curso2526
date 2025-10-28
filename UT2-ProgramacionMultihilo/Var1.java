@@ -1,5 +1,5 @@
 class Contador implements Runnable {
-    private int valor = 0; // variable de instancia
+    private static int valor = 0; // variable de instancia
 
     public void run() {
        valor=valor+1;
